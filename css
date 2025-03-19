@@ -1,0 +1,43 @@
+body {
+            text-align: center;
+        }
+        form {
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 8px;
+            width: 300px;
+            margin: 50px auto;
+            box-shadow: 0px 4px 16px #4c504c;
+        }
+        label, input {
+            display: block;
+            width: 94%;
+            margin-bottom: 8px;
+            text-align: left;
+        }
+        input {
+            padding: 8px;
+            border: 1px #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4c504c;
+            color: white;
+            cursor: pointer;
+            padding: 8px;
+            width: 100%;
+            box-shadow: 0px 4px 8px #4c504c;
+            margin-top: 3px;
+        }
+        button:hover {
+            background-color: #676d67;
+        }
+        table {
+            width: 75%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            border: 1px solid #ccc;
+        }
