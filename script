@@ -1,0 +1,45 @@
+<script>
+        let daftarBarang = [];
+    
+        function hitungdiskon(e) {
+            e.preventDefault();
+            let nama = document.getElementById("nama").value;
+            let harga = parseFloat(document.getElementById("harga").value);
+            let jumlah = parseInt(document.getElementById("jumlah").value);
+            let diskon = parseFloat(document.getElementById("diskon").value);
+    
+            if (diskon > 100) return alert("diskon tidak boleh lebih dari 100%");
+    
+            let hargasetelah = harga - (harga * diskon / 100);
+            let totalharga = hargasetelah * jumlah;
+    
+            // Menambahkan data ke dalam array
+            daftarBarang.push({
+                nama,
+                harga,
+                jumlah,
+                diskon,
+                totalharga
+            });
+
+            tampilkanData();
+            e.target.reset();
+        }
+    
+        function tampilkanData() {
+            let tabel = document.getElementById("tabelHasil");
+            tabel.innerHTML = "";
+    
+            daftarBarang.forEach((barang) => {
+                tabel.innerHTML += `
+                <tr>
+                    <td>${barang.nama}</td>
+                    <td>${barang.harga.toFixed(2)}</td>
+                    <td>${barang.jumlah}</td>
+                    <td>${barang.diskon}</td>
+                    <td>${barang.totalharga.toFixed(2)}</td>
+                </tr>
+                `;
+            });
+        }
+    </script>
