@@ -1,8 +1,9 @@
 body {
             text-align: center;
+            background-color: #cec5c5;
         }
         form {
-            background: #f4f4f4;
+            background: #ddd5d5;
             padding: 20px;
             border-radius: 8px;
             width: 300px;
@@ -17,7 +18,7 @@ body {
         }
         input {
             padding: 8px;
-            border: 1px #ccc;
+            border: 1px solid black;
             border-radius: 4px;
         }
         button {
@@ -31,13 +32,16 @@ body {
         }
         button:hover {
             background-color: #676d67;
+            transition: 0.4s;
         }
         table {
             width: 75%;
             margin: 20px auto;
             border-collapse: collapse;
+            background: #ddd5d5;
+            box-shadow: 0px 4px 16px #4c504c;
         }
         th, td {
             padding: 8px;
-            border: 1px solid #ccc;
+            border: 1px solid #8a6d6d;
         }
