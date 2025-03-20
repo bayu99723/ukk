@@ -1,0 +1,24 @@
+<form onsubmit="hitungdiskon(event)">
+        <h3>Penjualan Makanan/Minuman</h3>
+        <label for="nama">Nama Barang</label>
+        <input type="text" id="nama" required>
+        <label for="harga">Harga Satuan</label>
+        <input type="number" id="harga" required>
+        <label for="jumlah">Jumlah Dibeli</label>
+        <input type="number" id="jumlah" required>
+        <label for="diskon">Diskon %</label>
+        <input type="number" id="diskon" required>
+        <button type="submit">Hitung</button>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>Nama Barang</th>
+                <th>Harga Satuan</th>
+                <th>Jumlah Dibeli</th>
+                <th>Diskon (%)</th>
+                <th>Total Harga</th>
+            </tr>
+        </thead>
+        <tbody id="tabelHasil"></tbody>
+    </table>
