@@ -1,35 +1,33 @@
 <script>
-        let daftarBarang = [];
-    
+        let daftarBarang = JSON.parse(localStorage.getItem("penjualan")) || [];
+
+        document.addEventListener("DOMContentLoaded", () => {
+            tampilkanData();
+        });
+
         function hitungdiskon(e) {
             e.preventDefault();
             let nama = document.getElementById("nama").value;
             let harga = parseFloat(document.getElementById("harga").value);
             let jumlah = parseInt(document.getElementById("jumlah").value);
             let diskon = parseFloat(document.getElementById("diskon").value);
-    
-            if (diskon > 100) return alert("diskon tidak boleh lebih dari 100%");
-    
+
+            if (diskon > 100) return alert("Diskon tidak boleh lebih dari 100%");
+
             let hargasetelah = harga - (harga * diskon / 100);
             let totalharga = hargasetelah * jumlah;
-    
-            // Menambahkan data ke dalam array
-            daftarBarang.push({
-                nama,
-                harga,
-                jumlah,
-                diskon,
-                totalharga
-            });
+
+            let item = { nama, harga, jumlah, diskon, totalharga };
+            daftarBarang.push(item);
+            localStorage.setItem("penjualan", JSON.stringify(daftarBarang));
 
             tampilkanData();
             e.target.reset();
         }
-    
+
         function tampilkanData() {
             let tabel = document.getElementById("tabelHasil");
             tabel.innerHTML = "";
-    
             daftarBarang.forEach((barang) => {
                 tabel.innerHTML += `
                 <tr>
